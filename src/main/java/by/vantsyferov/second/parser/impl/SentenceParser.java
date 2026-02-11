@@ -19,7 +19,7 @@ public class SentenceParser extends AbstractParser {
       String sentenceText = matcher.group().trim();
       TextComponent sentence = new TextComposite(ComponentType.SENTENCE);
       component.add(sentence);
-      if (next != null) {
+      if (!sentenceText.isBlank()) {
         next.parse(sentenceText, sentence);
       }
     }

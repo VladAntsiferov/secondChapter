@@ -19,7 +19,7 @@ public class ParagraphParser extends AbstractParser {
       String paragraphText = matcher.group();
       TextComponent paragraph = new TextComposite(ComponentType.PARAGRAPH);
       component.add(paragraph);
-      if (next != null) {
+      if (paragraphText.isBlank()) {
         next.parse(paragraphText, paragraph);
       }
     }

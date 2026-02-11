@@ -19,7 +19,7 @@ public class WordParser extends AbstractParser {
       String lexemeText = matcher.group();
       TextComponent lexeme = new TextComposite(ComponentType.WORD);
       parent.add(lexeme);
-      if (next != null) {
+      if (!lexemeText.isBlank()) {
         next.parse(lexemeText, lexeme);
       }
     }
